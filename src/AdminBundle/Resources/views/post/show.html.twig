@@ -10,38 +10,38 @@
                 <td>{{ post.id }}</td>
             </tr>
             <tr>
-                <th>Name</th>
+                <th>Nome</th>
                 <td>{{ post.name }}</td>
             </tr>
             <tr>
-                <th>Slug</th>
+                <th>Sottotitolo</th>
                 <td>{{ post.slug }}</td>
             </tr>
             <tr>
-                <th>Content</th>
+                <th>Contenuto</th>
                 <td>{{ post.content }}</td>
             </tr>
             <tr>
-                <th>Createdat</th>
-                <td>{% if post.createdAt %}{{ post.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <th>data di creazione</th>
+                <td>{% if post.createdAt %}{{ post.createdAt|date('d-m-Y H:i:s') }}{% endif %}</td>
             </tr>
             <tr>
-                <th>Updatedat</th>
-                <td>{% if post.updatedAt %}{{ post.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <th>data di modifica</th>
+                <td>{% if post.updatedAt %}{{ post.updatedAt|date('d-m-Y H:i:s') }}{% endif %}</td>
             </tr>
         </tbody>
     </table>
 
     <ul>
         <li>
-            <a href="{{ path('post_index') }}">Back to the list</a>
+            <a href="{{ path('post_index') }}">torna alla lista</a>
         </li>
         <li>
-            <a href="{{ path('post_edit', { 'id': post.id }) }}">Edit</a>
+            <a href="{{ path('post_edit', { 'id': post.id }) }}">Modifica</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input type="submit" value="Elimina">
             {{ form_end(delete_form) }}
         </li>
     </ul>

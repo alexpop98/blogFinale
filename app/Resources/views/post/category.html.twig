@@ -3,20 +3,20 @@
 {% block body %}
 
     <div class="page-header">
-        <h1>Blog : {{ category.name }}</h1>
+        <h1>Juventus F.C. {{ category.name }}</h1>
     </div>
 
     {% for post in posts %}
         <article>
-            <h2><a href="{{ path('post_show', {slug: post.slug}) }}" title="{{ post.name }}">{{ post.name }}</a></h2>
+            <h2><a href="{{ path('post_show', {slug: post.slug}) }}" titolo="{{ post.name }}">{{ post.name }}</a></h2>
             <p>
-                <small>Category : <a href="{{ path('category_show', {slug: post.category.slug}) }}">{{ post.category.name }}</a>, by John on {{ post.createdAt | date("M dS Y") }}</small>
+                <small>Categoria : <a href="{{ path('category_show', {slug: post.category.slug}) }}">{{ post.category.name }}</a>, data: {{ post.createdAt | date("d M Y") }}</small>
             </p>
             <p>
                 {{ post.content | excerpt(60) }}
             </p>
             <p class="text-right">
-                <a href="{{ path('post_show', {slug: post.slug}) }}" class="btn btn-primary">Read more...</a>
+                <a href="{{ path('post_show', {slug: post.slug}) }}" class="btn btn-primary">leggi il post</a>
             </p>
         </article>
     {% endfor %}

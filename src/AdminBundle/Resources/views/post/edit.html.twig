@@ -1,10 +1,10 @@
 {% extends 'AdminBundle::base.html.twig' %}
 
 {% block body %}
-    <h1>Edit post</h1>
+    <h1>modifica post</h1>
 
     <p>
-        <a href="{{ path('admin_post_index') }}">< Back to the list</a>
+        <a href="{{ path('admin_post_index') }}">< torna alla lista dei post</a>
     </p>
 
     {% include "AdminBundle:post:form.html.twig" with {form: edit_form} %}

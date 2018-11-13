@@ -66,7 +66,7 @@ class PostController extends Controller
             $comment->setPost($post);
             $em->persist($comment);
             $em->flush();
-            $this->addFlash('success', 'Thanks for your comment');
+            $this->addFlash('success', 'grazie per aver commentato');
             return $this->redirectToRoute('post_show', ['slug' => $post->getSlug()]);
         }
 

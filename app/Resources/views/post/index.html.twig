@@ -2,11 +2,11 @@
 
 {% block title %}
     {% if category is defined %}
-        Category : {{ category.name }}
+        Categoria : {{ category.name }}
     {% elseif author is defined %}
-        Author : {{ author.username }}
+        Autore : {{ author.username }}
     {% else %}
-        Blog
+        Juventus F.C.
     {% endif %}
     {% if page > 1 %}
     Page {{ page }}
@@ -17,18 +17,18 @@
 
     {% if category is defined %}
         <div class="page-header">
-            <h1>Category : {{ category.name }}</h1>
+            <h1>Categoria : {{ category.name }}</h1>
             <p class="lead"></p>
         </div>
     {% elseif author is defined %}
         <div class="page-header">
-            <h1>Author : {{ author.username }}</h1>
+            <h1>Autore : {{ author.username }}</h1>
             <p class="lead"></p>
         </div>
     {% else %}
         <div class="page-header">
-            <h1>Blog</h1>
-            <p class="lead">Welcome on my blog</p>
+            <h1>Juventus F.C.</h1>
+            <p class="lead">Fino alla fine forza juventus</p>
         </div>
     {% endif %}
 
@@ -37,15 +37,15 @@
         <h2><a href="{{ path('post_show', {slug: post.slug}) }}" title="{{ post.name }}">{{ post.name }}</a></h2>
         <p>
             <small>
-                Category : <a href="{{ path('post_category', {slug: post.category.slug}) }}">{{ post.category.name }}</a>,
-                by <a href="{{ path('post_author', {id: post.user.id}) }}">{{ post.user.username }}</a>
-                on {{ post.createdAt | date("M dS Y") }}</small>
+                Categoria : <a href="{{ path('post_category', {slug: post.category.slug}) }}">{{ post.category.name }}</a>,
+                autore : <a href="{{ path('post_author', {id: post.user.id}) }}">{{ post.user.username }}</a>
+                data : {{ post.createdAt | date("d M Y") }}</small>
         </p>
         <p>
             {{ post.content | markdown | excerpt(60) }}
         </p>
         <p class="text-right">
-            <a href="{{ path('post_show', {slug: post.slug}) }}" class="btn btn-primary">Read more...</a>
+            <a href="{{ path('post_show', {slug: post.slug}) }}" class="btn btn-primary">leggi il post</a>
         </p>
     </article>
     {% endfor %}

@@ -8,7 +8,7 @@
         {% endif %}
 
         <form action="{{ path('login') }}" method="post" class="form-signin">
-            <h4 class="form-signin-heading">Please sign in</h4>
+            <h4 class="form-signin-heading">fai il login</h4>
             <div class="form-group">
                 <input type="text" id="username" name="_username" value="{{ last_username }}" placeholder="username" class="form-control"/>
             </div>
@@ -16,7 +16,7 @@
                 <input type="password" id="password" name="_password" placeholder="Password" class="form-control"/>
             </div>
             <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-            <button type="submit" class="btn btn-primary">Sign in</button>
+            <button type="submit" class="btn btn-primary">login</button>
         </form>
     </div>
 {% endblock %}

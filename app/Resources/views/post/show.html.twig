@@ -8,16 +8,16 @@
     <h1>{{ post.name }}</h1>
     <p>
         <small>
-            Category : <a href="{{ path('post_category', {slug: post.category.slug}) }}">{{ post.category.name }}</a>,
-            by <a href="{{ path('post_author', {id: post.user.id}) }}">{{ post.user.username }}</a>
-            on {{ post.createdAt|date("M dS Y") }}</small>
+            categoria : <a href="{{ path('post_category', {slug: post.category.slug}) }}">{{ post.category.name }}</a>,
+            autore: <a href="{{ path('post_author', {id: post.user.id}) }}">{{ post.user.username }}</a>
+            data: {{ post.createdAt|date("M dS Y") }}</small>
     </p>
 
     {{ post.content|raw|markdown }}
 
     <p>&nbsp;</p><!-- I know.... -->
 
-    <h3>Comment this post</h3>
+    <h3>commenta il post</h3>
 
     {{ form_start(comment_form) }}
         <div class="row">
@@ -31,7 +31,7 @@
     {{ form_widget(comment_form) }}
     {{ form_end(comment_form) }}
 
-    <h3>{{ post.comments|length }} Comment{% if post.comments|length > 0 %}s{% endif %}</h3>
+    <h3>{{ post.comments|length }} Commenta{% if post.comments|length > 0 %}s{% endif %}</h3>
 
     {% for comment in post.comments %}
         <div class="row">
