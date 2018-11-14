@@ -31,7 +31,7 @@
     {{ form_widget(comment_form) }}
     {{ form_end(comment_form) }}
 
-    <h3>{{ post.comments|length }} Commenta{% if post.comments|length > 0 %}s{% endif %}</h3>
+    <h3>{{ post.comments|length }} Commenti{% if post.comments|length > 0 %}s{% endif %}</h3>
 
     {% for comment in post.comments %}
         <div class="row">
